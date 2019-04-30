@@ -1,2 +1,2 @@
 <!--pages/home/home.wxml-->
-<text>pages/home/home.wxml</text>
+<text>{{time}}</text>

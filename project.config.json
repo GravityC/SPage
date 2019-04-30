@@ -14,7 +14,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.6.6",
 	"appid": "wx33d16e4edc50dbd6",
-	"projectname": "demo",
+	"projectname": "SPage",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

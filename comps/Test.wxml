@@ -1,0 +1,4 @@
+<!--comps/Test.wxml-->
+<text>{{c}}</text>
+<button bindtap='testComputed'>testComputed</button>
+<button bindtap='testRoute'>testRoute</button>

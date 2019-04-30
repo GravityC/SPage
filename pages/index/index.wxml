@@ -4,3 +4,5 @@
 <view>{{n2}}</view>
 <view>{{n3}}</view>
 <button bindtap='clickme'>点我点我</button>
+<button bindtap='testRoute'>点我去home</button>
+<Test></Test>
