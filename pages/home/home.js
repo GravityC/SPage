@@ -5,11 +5,12 @@ Page('home', {
     start:new Date().getTime(),
   },
 
-  onNavigate(){
+  onNavigate(query){
+    console.log(query)
     console.log('onNavigate', new Date().getTime())
   },
   onLoad(options) {
-    console.log('onLoad', new Date().getTime())
+    console.log('onLoad', new Date().getTime(), options)
   },
 
 })
