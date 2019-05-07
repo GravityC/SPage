@@ -2,3 +2,4 @@
 <text>{{c}}</text>
 <button bindtap='testComputed'>testComputed</button>
 <button bindtap='testRoute'>testRoute</button>
+<button bindtap='testEvent'>testEvent</button>

@@ -1,2 +1,4 @@
 <!--pages/home/home.wxml-->
+<view>{{eventNum}}</view>
 <text>{{time}}</text>
+<button bindtap='testEvent'>testEvent</button>

@@ -12,6 +12,10 @@ Page('index', {
       return this.data.n1 + this.data.n2
     }
   },
+  testEvent(){
+    console.log(this)
+    wx.$event.emit('home')
+  },
   testRoute(){
     this.$route('../home/home')
   },
@@ -21,7 +25,11 @@ Page('index', {
     })
   },
   onLoad: function () {
-
+    wx.$event.on('home', () => {
+      this.$setData({
+        n2:++this.data.n2
+      })
+    })
   },
   onNavigate(){
 

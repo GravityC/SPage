@@ -3,6 +3,7 @@
 <view>{{n1}}</view>
 <view>{{n2}}</view>
 <view>{{n3}}</view>
-<button bindtap='clickme'>点我点我</button>
-<button bindtap='testRoute'>点我去home</button>
+<button bindtap='clickme'>testComputed</button>
+<button bindtap='testEvent'>testEvent</button>
+<button bindtap='testRoute'>toHome</button>
 <Test></Test>

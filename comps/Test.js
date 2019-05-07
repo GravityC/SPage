@@ -19,6 +19,9 @@ Component({
     a:5,
     b:6
   },
+  params:{
+    c:1
+  },
   computed:{
     c(){
       return this.data.a +　this.data.b
@@ -36,6 +39,9 @@ Component({
     },
     testRoute(){
       this.$route('/pages/home/home')
+    },
+    testEvent(){
+      wx.$event.emit('home')
     }
   }
 })
