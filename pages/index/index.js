@@ -25,11 +25,10 @@ Page('index', {
     })
   },
   onLoad: function () {
-    wx.$event.on('home', () => {
-      this.$setData({
-        n2:++this.data.n2
-      })
-    })
+    console.log('onLoad')
+  },
+  onShow(){
+    console.log(this.$status)
   },
   onNavigate(){
 

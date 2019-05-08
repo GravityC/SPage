@@ -42,6 +42,11 @@ Component({
     },
     testEvent(){
       wx.$event.emit('home')
+    },
+    testCurPage(){
+      const page = this.$getCurPage()
+      console.log(page)
+      console.log(this.$getCurPageName())
     }
   }
 })

@@ -7,14 +7,14 @@ Page('home', {
   },
 
   testEvent(){
-    this.$event.emit('change')
+    
   },
 
   onNavigate(query){
     
   },
   onLoad(options) {
-    
+    console.log()
   },
 
 })
