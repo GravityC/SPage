@@ -19,9 +19,6 @@ Component({
     a:5,
     b:6
   },
-  params:{
-    c:1
-  },
   computed:{
     c(){
       return this.data.a +　this.data.b
