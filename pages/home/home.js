@@ -1,4 +1,5 @@
 // pages/home/home.js
+let a, b
 Page('home', {
   data: {
     eventNum:1,
@@ -6,15 +7,22 @@ Page('home', {
     start:new Date().getTime(),
   },
 
+  testNavigate(){
+    console.log('test')
+  },
+
   testEvent(){
     
   },
 
   onNavigate(query){
-    console.log(1, query)
+    a = this
+    console.log(a)
   },
   onLoad(options) {
-    console.log(2, options)
+    b = this
+    console.log(b)
+    console.log(a === b)
   },
 
 })
