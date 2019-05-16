@@ -44,6 +44,6 @@ Component({
       const page = this.$getCurPage()
       console.log(page)
       console.log(this.$getCurPageName())
-    }
+    },
   }
 })

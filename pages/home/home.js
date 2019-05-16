@@ -11,10 +11,10 @@ Page('home', {
   },
 
   onNavigate(query){
-    
+    console.log(1, query)
   },
   onLoad(options) {
-    console.log()
+    console.log(2, options)
   },
 
 })
