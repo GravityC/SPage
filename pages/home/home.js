@@ -16,13 +16,13 @@ Page('home', {
   },
 
   onNavigate(query){
-    a = this
-    console.log(a)
+    console.log(1)
   },
   onLoad(options) {
-    b = this
-    console.log(b)
-    console.log(a === b)
+    console.log(2)
   },
+  onShow(){
+    console.log(this.$status.isFirstShow)
+  }
 
 })

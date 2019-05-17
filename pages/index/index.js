@@ -15,7 +15,6 @@ Page('index', {
   },
   testEvent(){
     console.log(this)
-    wx.$event.emit('home')
   },
   testRoute(){
     this.$route('../home/home')
@@ -26,12 +25,12 @@ Page('index', {
     })
   },
   onLoad: function () {
-      
+    this.testEvent()
   },
   onShow(){
   },
   onNavigate(){
-
+    console.log(123)
   },
   getUserInfo: function(e) {
     
