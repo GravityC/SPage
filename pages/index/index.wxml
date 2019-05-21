@@ -1,6 +1,6 @@
 <view>{{test}}</view>
 <view>{{test2}}</view>
-<view>{{n1}}</view>
+<view bindtap='$set' data-key="n1" data-value="{{n2}}">{{n1}}</view>
 <view>{{n2}}</view>
 <view>{{n3}}</view>
 <button bindtap='clickme'>testComputed</button>

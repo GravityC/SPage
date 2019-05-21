@@ -19,7 +19,7 @@ Page('home', {
     console.log(1)
   },
   onLoad(options) {
-    console.log(2)
+    console.log(getCurrentPages())
   },
   onShow(){
     console.log(this.$status.isFirstShow)

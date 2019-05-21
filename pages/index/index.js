@@ -9,7 +9,6 @@ Page('index', {
       return this.data.test + 'computed prop'
     },
     n3(){
-      console.log(this)
       return this.data.n1 + this.data.n2
     }
   },
@@ -25,7 +24,7 @@ Page('index', {
     })
   },
   onLoad: function () {
-    this.testEvent()
+    console.log(this.route)
   },
   onShow(){
   },
