@@ -8,21 +8,17 @@ Page('home', {
   },
 
   testNavigate(){
-    console.log('test')
   },
 
   testEvent(){
-    
+    wx.$event.emit('test', 1, 2)
   },
 
   onNavigate(query){
-    console.log(1)
   },
   onLoad(options) {
-    console.log(getCurrentPages())
   },
   onShow(){
-    console.log(this.$status.isFirstShow)
   }
 
 })
