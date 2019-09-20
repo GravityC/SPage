@@ -8,20 +8,20 @@ Page('index', {
   onNavigate() {
   },
   onLoad() {
-    wx.$event.once('login', () => {
-      this.$setData({
-        n1:1
-      })
+    console.log('----------------------onLoad----------------')
+    wx.$request.config.baseUrl = 'https://develop.geeme.cn/service-api'
+
+    wx.$request.interceptors.request.use(config => {
+      config.data.id = 210
+      console.log('请求拦截', config)
     })
-    wx.$event.once('login', () => {
-      this.$setData({
-        n2: 1
-      })
+
+    wx.$request.interceptors.response.use(response => {
+      console.log('响应拦截', response)
     })
-    wx.$event.once('login', () => {
-      this.$setData({
-        n3: 1
-      })
+
+    wx.$post('/customer/getServiceInfo', { appId:'wxa211e53038087920', id:162}).then( res => {
+      console.log(res)
     })
   },
   computed:{
