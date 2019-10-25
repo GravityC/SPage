@@ -1,6 +1,7 @@
 // pages/home/home.js
 let a, b
-Page('home', {
+Page({
+  $name:'home',
   data: {
     eventNum:1,
     time:0,
@@ -15,10 +16,13 @@ Page('home', {
   },
 
   onNavigate(query){
+    console.log('query')
   },
   onLoad(options) {
+    console.log('home onLoad: ', options)
   },
   onShow(){
+    console.log('home onShow')
   }
 
 })

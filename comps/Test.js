@@ -3,11 +3,11 @@ Component({
   lifetimes:{
     created(){
       
+    },
+    attached(){
+      console.log('2')
     }
   },
-  /**
-   * 组件的属性列表
-   */
   properties: {
 
   },

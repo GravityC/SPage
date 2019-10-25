@@ -1,4 +1,4 @@
-<view>{{test}}</view>
+<view>{{$initData}}</view>
 <view>{{test2}}</view>
 <view>{{n1}}</view>
 <view>{{n2}}</view>

@@ -1,48 +1,60 @@
-Page('index', {
+Page({
+  $name:'index',
   data: {
-    test:'',
-    n1:0,
-    n2:0,
-    n3:0,
+    test: '',
+    n1: 0,
+    n2: 0,
+    n3: 0,
   },
-  onNavigate() {
-  },
+  onNavigate() {},
   onLoad() {
-    console.log('----------------------onLoad----------------')
-    wx.$request.config.baseUrl = 'https://develop.geeme.cn/service-api'
+    console.log('----------------------onLoad----------------------')
+    // wx.$request.config.baseUrl = 'https://develop.geeme.cn/service-api'
 
-    wx.$request.interceptors.request.use(config => {
-      config.data.id = 210
-      console.log('请求拦截', config)
-    })
+    // wx.$request.interceptors.request.use(config => {
+    //   console.log('请求拦截', config)
+    // })
 
-    wx.$request.interceptors.response.use(response => {
-      console.log('响应拦截', response)
-    })
+    // wx.$request.interceptors.response.use(response => {
+    //   console.log('响应拦截', response)
+    // })
 
-    wx.$post('/customer/getServiceInfo', { appId:'wxa211e53038087920', id:162}).then( res => {
-      console.log(res)
+    // wx.$post('/customer/getServiceInfo', { appId:'wxa211e53038087920', id:162}).then( res => {
+    //   console.log(res)
+    // })
+    var obj = {
+      name:'obj'
+    }
+    var proxy = new Proxy(obj, {
+      set(){
+
+      },
+      get: function(target, property){
+        return 'abc'
+      }
     })
+    console.log(proxy.name)
   },
-  computed:{
-    test2(){
+  onShow(){
+    
+  },
+  computed: {
+    test2() {
       return this.data.test + 'computed prop'
     },
   },
-  testEvent(){
+  testEvent() {
     wx.$event.emit('login')
   },
-  testRoute(){
+  testRoute() {
     this.$route('../home/home')
   },
-  clickme(){
+  clickme() {
     this.$setData({
-      n1:++this.data.n1
+      n1: ++this.data.n1
     })
   },
   getUserInfo: function(e) {
-    
+
   },
-  test(a, b){
-  }
 })
