@@ -30,21 +30,21 @@ require('/lib/SPage.js')
 		```
 
 	+ **方法**：
-		+ **wx.$http.request**(config)
+		+ **wx.$http.request**(config)  
 		`config`：本次请求参数，可覆盖默认配置，下同
-		+ **wx.$http.get**(url, config) 
-		method为'GET'的request方法。
+		+ **wx.$http.get**(url, config)  
+		method为'GET'的request方法。  
 		`url`：请求地址，下同
-		+ **wx.$http.post**(url, data, config)
+		+ **wx.$http.post**(url, data, config)  
 		`data`:config中的data参数，下同
 		+ **wx.$http.put**(url, data, config)
-		+ **wx.$http.delete**(url, config)
+		+ **wx.$http.delete**(url, config)  
 		
-	以上方法均有别名。分别为`wx.$request`,`wx.$get`,`wx.$post`,`wx.$put`,`wx.$delete`
+		以上方法均有别名。分别为`wx.$request`,`wx.$get`,`wx.$post`,`wx.$put`,`wx.$delete`
 	+ **拦截器**：
-		+ wx.$http.interceptors.request.use(success<`Function`>, fail<`Function`>)
+		+ wx.$http.interceptors.request.use(success<`Function`>, fail<`Function`>)  
 		配置请求拦截器
-		+ wx.$http.interceptors.request.use(success<`Function`>, fail<`Function`>)
+		+ wx.$http.interceptors.request.use(success<`Function`>, fail<`Function`>)  
 		配置响应拦截器
 		
 	+ **用法示例**：
@@ -69,19 +69,19 @@ require('/lib/SPage.js')
 	```
 
 ## 全局方法
-+ **wx.$getCurPage()**
++ **wx.$getCurPage()**  
 返回当前页面实例
 
-+ **wx.$getCurPageName()**
++ **wx.$getCurPageName()**  
 返回当前页面名
 
-+ **wx.$place(key, value)**
++ **wx.$place(key, value)**  
 指定`key`保存一份数据，可以为任何类型，以供其它逻辑获取使用
 
-+ **wx.$take(key)**
++ **wx.$take(key)**  
 根据`key`获取数据，数据只能被存在一次，获取一次。如果只存放一次，第二次获取 会得到 null 。
 
-+ **wx.$route(url<`String`>, query<`Object`>)**
++ **wx.$route(url<`String`>, query<`Object`>)**  
 wx.navigateTo的封装
 	+ `url` - 跳转路径
 	+ `query` - 携带参数
