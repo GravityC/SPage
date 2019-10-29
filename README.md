@@ -1,6 +1,6 @@
 # SPage
 
-###使用
+### 使用
 将SPage.js、SEvent.js、SRequest.js放置到项目的同一目录下，然后在app.js文件中引入
 ```javascript
 //app.js
@@ -16,17 +16,19 @@ require('/lib/SPage.js')
 	+ `remove(eventName)` 卸载事件的所有handler
 
 + **wx.$http**
-wx.request的封装与扩展，提供了拦截器的配置。
+
+	wx.request的封装与扩展，提供了拦截器的配置。
 	+ **对象**：
-		+ **wx.$http.config**，每次请求时的默认配置，可以配置wx.request除三个回调函数外的[参数](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)，以及`baseUrl`以下是默认配置
-```javascript
-config = {
-		baseUrl:'',
-		dataType: 'json',
-		responseType: 'text',
-		header: {},
-  }
-```
+		+ **wx.$http.config**，每次请求时的默认配置，可以配置wx.request除三个回调函数外的[参数](https://developers.weixin.qq.com/miniprogram/dev/api/network/request/wx.request.html)，以及`baseUrl`以下是默认配置	
+		```javascript
+		config = {
+			baseUrl:'',
+			dataType: 'json',
+			responseType: 'text',
+			header: {},
+  		}
+		```
+
 	+ **方法**：
 		+ **wx.$http.request**(config)
 		`config`：本次请求参数，可覆盖默认配置，下同
@@ -46,9 +48,9 @@ config = {
 		配置响应拦截器
 		
 	+ **用法示例**：
-```javascript
-require('/lib/SPage.js')
-APP({
+	```javascript
+	require('/lib/SPage.js')
+	APP({
 		onLaunch(){
 			wx.$http.config.baseUrl = 'https://x.xx.xxx/xxxx/'
 			wx.$http.interceptors.request.use(config => {
@@ -63,8 +65,8 @@ APP({
 				return res
 			})
 		}
-})
-```
+	})
+	```
 
 ## 全局方法
 + **wx.$getCurPage()**
