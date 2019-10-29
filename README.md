@@ -6,7 +6,7 @@
 //app.js
 require('/lib/SPage.js')
 ```
-##全局对象
+## 全局对象
 + **wx.$event**
 用于页面间通信的事件分发机制，方法如下：
 	+ `on(eventName, handler)` 订阅事件
@@ -66,7 +66,7 @@ APP({
 })
 ```
 
-##全局方法
+## 全局方法
 + **wx.$getCurPage()**
 返回当前页面实例
 
@@ -84,7 +84,7 @@ wx.navigateTo的封装
 	+ `url` - 跳转路径
 	+ `query` - 携带参数
 
-##扩展App
+## 扩展App
 **$mixinP对象。此对象中的所有属性会合并到每个Page对象中，合并策略：**
 * 1.若属性名为Page自带的[钩子函数](https://developers.weixin.qq.com/miniprogram/dev/reference/api/Page.html)，即以“on”开头的方法，则这些方法在各个Page实例定义的对应钩子函数之前执行：
 ```javascript
@@ -106,14 +106,14 @@ App({
 * 2.若属性名为'properties', 'data', 'observers', 'methods', 'options'其中之一，则按照mixinP策略二合并。
 * 3.同mixinP策略三。
 
-##扩展Page
+## 扩展Page
 ####生命周期
 + **onNavigate**
 在`onLoad`之前执行，可用于页面跳转延时时的请求数据操作。**注意：**
 	+ 1.该页面必须声明$name属性
 	+ 2.必须使用$route跳转到该页面
 
-####属性
+#### 属性
 + **$name** < `String` >
 必须指定$name属性才能调用`onNavigate`
 + **$status** <`Object`>
@@ -123,7 +123,7 @@ App({
 	扩展了computed计算属性，与Vue的用法相同
 	**注意：必须使用$setData才能触发**
 
-####方法
+#### 方法
 + **$setData**(obj<`Object`>)
 `setData`的封装，必须使用`$setData`才能触发`computed`计算属性
 
@@ -151,8 +151,8 @@ App({
 + **$delete**(url, config)
 同`wx.$delete`
 
-##扩展Component
-####方法
+## 扩展Component
+#### 方法
 + **$setData**(obj<`Object`>)
 `setData`的封装，必须使用`$setData`才能触发`computed`计算属性
 
@@ -183,7 +183,7 @@ App({
 + **$put**(url, data, config)
 同`wx.$put`
 
-##写给自己
+## 写给自己
 当初半路接手公司项目，想要用框架重构，但被项目经理拒绝了。。。只好自己边写业务代码边写一个自己的小框架，因此框架的功能全是平时小程序工作中常用的，有一些异想天开的功能也被自己毙掉了，毕竟原设想就是简洁为主嘛。
 完善框架的过程中，有一些功能，通过各博客或实现了、或受到了启发，让自己受益良多，也对小程序的机制有了深入的了解。特别感谢腾讯WeTest的[微信小程序之提高应用速度小技巧](https://wetest.qq.com/lab/view/294.html?from=content_csdnblog)。
 记得某次面试谈及我的一个webpack脚手架，面试官问现在市面上的脚手架这么多，为什么要用你自己的呢。我愣住了，不知道如何回答，是啊，为什么呢，我的脚手架根本没有优势。但现在我会回答，因为这是我自己写的。
