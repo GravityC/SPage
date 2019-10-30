@@ -9,15 +9,15 @@ require('/lib/SPage.js')
 ## 全局对象
 + **wx.$event**
 用于页面间通信的事件分发机制，方法如下：
-	+ `on(eventName, handler)`  
+	+ **on(eventName, handler)**   
   订阅事件，`return`一个listenerId，在页面或组件中推荐使用`this.$on`，可在页面或组件卸载时自动卸载通过`this.$on`注册的监听器。
-	+ `once(eventName, handler)`  
+	+ **once(eventName, handler)**  
 	订阅事件，只会触发一次
-	+ `emit(eventName)`  
+	+ **emit(eventName)**  
 	分发事件
-	+ `off(nameOrId[, handler])`  
+	+ **off(nameOrId[, handler])**  
   卸载事件监听。支持只传一个listenerId或传eventName加handler
-	+ `remove(eventName)` 卸载事件的所有handler
+	+ **remove(eventName)** 卸载事件的所有handler
 
 + **wx.$http**
 
