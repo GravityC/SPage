@@ -161,16 +161,16 @@ App({
 + **$on**(eventName, handler)  
 与`wx.$event.on`有所不同，使用此方法注册的事件监听器会在页面`onUnload`时自动卸载
 
-+ **$once**(url, config)  
++ **$once**(eventName, handler)  
 同`wx.$event.once`
 
-+ **$emit**(url, config)  
++ **$emit**(eventName)  
 同`wx.$event.emit`
 
-+ **$off**(url, config)  
++ **$off**(nameOrId[,handler])  
 同`wx.$event.off`
 
-+ **$remove**(url, config)  
++ **$remove**(eventName)  
 同`wx.$event.remove`
 
 ## 扩展Component
@@ -211,16 +211,16 @@ App({
 + **$on**(eventName, handler)  
 与`wx.$event.on`有所不同，使用此方法注册的事件监听器会在组件`detached`时自动卸载
 
-+ **$once**(url, config)  
++ **$once**(eventName, handler)  
 同`wx.$event.once`
 
-+ **$emit**(url, config)  
++ **$emit**(eventName)  
 同`wx.$event.emit`
 
-+ **$off**(url, config)  
++ **$off**(nameOrId[,handler])  
 同`wx.$event.off`
 
-+ **$remove**(url, config)  
++ **$remove**(eventName)  
 同`wx.$event.remove`
 
 ## 写给自己
