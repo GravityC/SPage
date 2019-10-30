@@ -9,10 +9,14 @@ require('/lib/SPage.js')
 ## 全局对象
 + **wx.$event**
 用于页面间通信的事件分发机制，方法如下：
-	+ `on(eventName, handler)` 订阅事件
-	+ `once(eventName, handler)` 订阅事件，只会触发一次
-	+ `emit(eventName)` 分发事件
-	+ `off(eventName, handler)` 卸载事件监听
+	+ `on(eventName, handler)`  
+  订阅事件，`return`一个listenerId，在页面或组件中推荐使用`this.$on`，可在页面或组件卸载时自动卸载通过`this.$on`注册的监听器。
+	+ `once(eventName, handler)`  
+	订阅事件，只会触发一次
+	+ `emit(eventName)`  
+	分发事件
+	+ `off(nameOrId[, handler])`  
+  卸载事件监听。支持只传一个listenerId或传eventName加handler
 	+ `remove(eventName)` 卸载事件的所有handler
 
 + **wx.$http**
@@ -40,7 +44,7 @@ require('/lib/SPage.js')
 		+ **wx.$http.put**(url, data, config)
 		+ **wx.$http.delete**(url, config)  
 		
-		以上方法均有别名。分别为`wx.$request`,`wx.$get`,`wx.$post`,`wx.$put`,`wx.$delete`
+	以上方法均有别名。分别为`wx.$request`,`wx.$get`,`wx.$post`,`wx.$put`,`wx.$delete`
 	+ **拦截器**：
 		+ wx.$http.interceptors.request.use(success<`Function`>, fail<`Function`>)  
 		配置请求拦截器
@@ -154,6 +158,21 @@ App({
 + **$delete**(url, config)  
 同`wx.$delete`
 
++ **$on**(eventName, handler)  
+与`wx.$event.on`有所不同，使用此方法注册的事件监听器会在页面`onUnload`时自动卸载
+
++ **$once**(url, config)  
+同`wx.$event.once`
+
++ **$emit**(url, config)  
+同`wx.$event.emit`
+
++ **$off**(url, config)  
+同`wx.$event.off`
+
++ **$remove**(url, config)  
+同`wx.$event.remove`
+
 ## 扩展Component
 #### 方法
 + **$setData**(obj<`Object`>)  
@@ -185,6 +204,24 @@ App({
 
 + **$put**(url, data, config)  
 同`wx.$put`
+
++ **$delete**(url, config)  
+同`wx.$delete`
+
++ **$on**(eventName, handler)  
+与`wx.$event.on`有所不同，使用此方法注册的事件监听器会在组件`detached`时自动卸载
+
++ **$once**(url, config)  
+同`wx.$event.once`
+
++ **$emit**(url, config)  
+同`wx.$event.emit`
+
++ **$off**(url, config)  
+同`wx.$event.off`
+
++ **$remove**(url, config)  
+同`wx.$event.remove`
 
 ## 写给自己
 当初半路接手公司项目，想要用框架重构，但被项目经理拒绝了。。。只好自己边写业务代码边写一个自己的小框架，因此框架的功能全是平时小程序工作中常用的，有一些异想天开的功能也被自己毙掉了，毕竟原设想就是简洁为主嘛。  
