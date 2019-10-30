@@ -5,35 +5,19 @@ Page({
     n1: 0,
     n2: 0,
     n3: 0,
+    ifShowTest:true
   },
   onNavigate() {},
   onLoad() {
     console.log('----------------------onLoad----------------------')
-    // wx.$request.config.baseUrl = 'https://develop.geeme.cn/service-api'
-
-    // wx.$request.interceptors.request.use(config => {
-    //   console.log('请求拦截', config)
-    // })
-
-    // wx.$request.interceptors.response.use(response => {
-    //   console.log('响应拦截', response)
-    // })
-
-    // wx.$post('/customer/getServiceInfo', { appId:'wxa211e53038087920', id:162}).then( res => {
-    //   console.log(res)
-    // })
-    var obj = {
-      name:'obj'
-    }
-    var proxy = new Proxy(obj, {
-      set(){
-
-      },
-      get: function(target, property){
-        return 'abc'
-      }
+    console.log('page', this)
+    this.id = wx.$event.on('login', (str) => {
+      console.log(str)
     })
-    console.log(proxy.name)
+    const json = {
+      '1':123
+    }
+    console.log(json)
   },
   onShow(){
     
@@ -44,7 +28,13 @@ Page({
     },
   },
   testEvent() {
-    wx.$event.emit('login')
+    this.$emit('test')
+
+  },
+  testEvent2(){
+    this.$setData({
+      ifShowTest:!this.data.ifShowTest
+    })
   },
   testRoute() {
     this.$route('../home/home')

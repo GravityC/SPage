@@ -2,19 +2,20 @@
 Component({
   lifetimes:{
     created(){
-      
+      this.$on('test', function(){
+        console.log('test')
+      })
     },
     attached(){
       console.log('2')
+    },
+    detached(){
+      console.log('Test detached')
     }
   },
   properties: {
 
   },
-
-  /**
-   * 组件的初始数据
-   */
   data: {
     a:5,
     b:6
@@ -24,10 +25,6 @@ Component({
       return this.data.a +　this.data.b
     }
   },
-
-  /**
-   * 组件的方法列表
-   */
   methods: {
     testComputed(){
       this.$setData({
@@ -38,7 +35,7 @@ Component({
       this.$route('/pages/home/home')
     },
     testEvent(){
-      wx.$event.emit('home')
+      this.$emit('test')
     },
     testCurPage(){
       const page = this.$getCurPage()

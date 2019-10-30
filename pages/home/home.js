@@ -7,22 +7,21 @@ Page({
     time:0,
     start:new Date().getTime(),
   },
-
-  testNavigate(){
-  },
-
-  testEvent(){
-    wx.$event.emit('test', 1, 2)
-  },
-
   onNavigate(query){
     console.log('query')
   },
   onLoad(options) {
-    console.log('home onLoad: ', options)
+    this.$on('home', function(){
+      console.log(123)
+    })
   },
   onShow(){
     console.log('home onShow')
+  },
+  onUnload(){
+    console.log('onUnload')
+  },
+  testEvent(){
+    this.$emit('home')
   }
-
 })
