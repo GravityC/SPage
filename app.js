@@ -31,11 +31,11 @@ App({
     }
   },
   $mixinC:{
-    lifetimes:{
-      attached(){
-        console.log('attached')
-      }
-    }
+    // lifetimes:{
+    //   attached(){
+    //     console.log('attached')
+    //   }
+    // }
   },
   onLaunch() {
     

@@ -1,18 +1,18 @@
 // comps/Test.js
 Component({
-  lifetimes:{
-    created(){
-      this.$on('test', function(){
-        console.log('test')
-      })
-    },
-    attached(){
-      console.log('2')
-    },
-    detached(){
-      console.log('Test detached')
-    }
-  },
+  // lifetimes:{
+  //   created(){
+  //     this.$on('test', function(){
+  //       console.log('test')
+  //     })
+  //   },
+  //   attached(){
+  //     console.log('2')
+  //   },
+  //   detached(){
+  //     console.log('Test detached')
+  //   }
+  // },
   properties: {
 
   },
